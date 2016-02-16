@@ -11,14 +11,14 @@ gem 'pg', '~> 0.15'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'whenever'
-gem 'puma', '2.12.3'
-gem 'puma_worker_killer'
+gem 'whenever', require: false
+gem 'unicorn'
 gem 'activeadmin', github: 'activeadmin'
 gem 'activeadmin-dragonfly', github: 'stefanoverna/activeadmin-dragonfly'
 gem 'activeadmin-wysihtml5', github: 'stefanoverna/activeadmin-wysihtml5'
 gem 'devise'
 gem "aws-ses", "~> 0.6.0", :require => 'aws/ses'
+gem 'bower-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -40,4 +40,5 @@ end
 
 group :production do
   gem 'dotenv-rails', :require => 'dotenv/rails-now'
+  gem "skylight"
 end
