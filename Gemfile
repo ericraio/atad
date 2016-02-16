@@ -14,8 +14,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'whenever'
 gem 'puma', '2.12.3'
 gem 'puma_worker_killer'
-gem 'activeadmin', '~> 1.0.0.pre2'
-gem 'active_admin_editor', github: 'ejholmes/active_admin_editor'
+gem 'activeadmin', github: 'activeadmin'
+gem 'activeadmin-dragonfly', github: 'stefanoverna/activeadmin-dragonfly'
+gem 'activeadmin-wysihtml5', github: 'stefanoverna/activeadmin-wysihtml5'
 gem 'devise'
 gem "aws-ses", "~> 0.6.0", :require => 'aws/ses'
 

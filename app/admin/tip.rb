@@ -3,7 +3,7 @@ ActiveAdmin.register Tip do
   form do |f|
     inputs do
       input :subject
-      input :body, as: :html_editor
+      input :body, as: :wysihtml5, commands: :all
     end
 
     actions

@@ -3,17 +3,17 @@ namespace :docker do
   task :publish => ['docker:push', 'docker:clean']
 
   task :build do
-    sh 'docker build -t "carsocial/carsocial-api" .'
+    sh 'docker build -t "atad/atad" .'
   end
 
   task :push do
-    sh 'docker tag carsocial/carsocial-api:latest tutum.co/ericraio/carsocial-api:latest'
-    sh 'docker push tutum.co/ericraio/carsocial-api:latest'
+    sh 'docker tag atad/atad:latest ericraio/atad:latest'
+    sh 'docker push ericraio/atad:latest'
   end
 
   task :clean do
     sh 'say update completed'
-    sh 'docker rmi -f tutum.co/ericraio/carsocial-api'
+    sh 'docker rmi -f ericraio/atad'
     sh 'bin/docker-clean images'
     sh 'echo y | bin/docker-clean containers'
   end

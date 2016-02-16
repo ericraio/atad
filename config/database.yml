@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: atad_production
-  username: atad
-  password: <%= ENV['ATAD_DATABASE_PASSWORD'] %>
+  url: <%= Rails.application.secrets.database_url %>
