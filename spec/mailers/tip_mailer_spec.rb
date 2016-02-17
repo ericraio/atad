@@ -1,22 +1,8 @@
 require "rails_helper"
 
-RSpec.describe Notifications, type: :mailer do
-  describe "welcome" do
-    let(:mail) { Notifications.welcome }
-
-    it "renders the headers" do
-      expect(mail.subject).to eq("Welcome")
-      expect(mail.to).to eq(["to@example.org"])
-      expect(mail.from).to eq(["from@example.com"])
-    end
-
-    it "renders the body" do
-      expect(mail.body.encoded).to match("Hi")
-    end
-  end
-
+RSpec.describe TipMailer, type: :mailer do
   describe "daily" do
-    let(:mail) { Notifications.daily }
+    let(:mail) { TipMailer.daily }
 
     it "renders the headers" do
       expect(mail.subject).to eq("Daily")
@@ -30,7 +16,7 @@ RSpec.describe Notifications, type: :mailer do
   end
 
   describe "weekly" do
-    let(:mail) { Notifications.weekly }
+    let(:mail) { TipMailer.weekly }
 
     it "renders the headers" do
       expect(mail.subject).to eq("Weekly")
