@@ -18,3 +18,4 @@
 .env
 vendor/cache
 vendor/assets
+.byebug_history
