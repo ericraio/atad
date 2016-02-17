@@ -21,6 +21,7 @@ gem "aws-ses", "~> 0.6.0", :require => 'aws/ses'
 gem 'bower-rails'
 gem 'font-awesome-sass', '~> 4.2.0'
 gem 'roadie-rails', '1.0.6'
+gem 'paper_trail'
 
 group :test do
   gem 'cucumber-rails', :require => false
