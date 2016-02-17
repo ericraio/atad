@@ -1,3 +1,74 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home {
+  background-color: #282828;
+  h2 {
+    color: #A94442;
+  }
+  .home-container {
+    display: table;
+    width: 100%;
+    height: auto;
+    padding: 100px 0;
+    text-align: center;
+    color: #fff;
+    background: image-url('bg.jpg') no-repeat bottom center scroll;
+    background-color: #282828;
+  }
+
+  .home-row {
+    margin-top: -180px;
+  }
+
+  .home-container .home-body {
+    display: table-cell;
+    vertical-align: middle;
+    height: auto;
+    width: 645px;
+    margin: 0px auto;
+    position: relative;
+    text-align: center;
+  }
+
+  .home-container .home-body .brand-heading {
+    font-family: Oxygen,"helvetica neue",helvetica,arial,sans-serif;
+    margin-bottom: 4rem;
+    text-align: center;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .home-container .home-body .home-container-text {
+    font-size: 18px;
+  }
+
+  @media(min-width:768px) {
+    .alert-bg {
+      opacity: 0.5;
+    }
+    .home-container {
+      height: 100%;
+      padding: 0;
+    }
+
+    .home-container .home-body .brand-heading {
+      font-size: 65px;
+    }
+
+    .home-container .home-body .home-container-text {
+      font-size: 23px;
+    }
+  }
+
+  @media(max-width:768px) {
+    .home-row {
+      margin-top: 0;
+    }
+    .alert-bg {
+      opacity: 0.9;
+    }
+  }
+
+}
