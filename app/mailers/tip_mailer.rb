@@ -1,4 +1,5 @@
 class TipMailer < ApplicationMailer
+  default from: '"Eric from Agile Tips" <tips@agiletipaday.com>'
 
   def daily(user_id, tip_id)
     @user = User.find(user_id)
