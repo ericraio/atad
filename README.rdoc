@@ -1,1 +1,5 @@
-* brew install mysql
+Install
+=======
+
+* Install Postgres(http://www.postgresql.org/download/)
+* rake bower:install
