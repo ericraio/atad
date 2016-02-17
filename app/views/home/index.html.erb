@@ -7,12 +7,11 @@
           <p class="home-text">Short, curated agile ideas delivered to your email every day. 96% retention rate.</p>
         </div>
 
-        <div class="col-md-8 col-md-offset-2">
-          <div class="alert alert-danger alert-bg" role="alert">
-            <h2><span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span>&nbsp;  Sorry, you are not invited.</h2>
-            <p>This is an invite-only service for a community of agilists.</p>
-          </div>
-        </div>
+        <% if @referral %>
+          <%= render "sign_up" %>
+        <% else %>
+          <%= render "not_invited" %>
+        <% end %>
       </div>
     </div>
   </div>
