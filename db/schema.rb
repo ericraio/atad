@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160216022408) do
+ActiveRecord::Schema.define(version: 20160217034123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,8 +72,10 @@ ActiveRecord::Schema.define(version: 20160216022408) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.boolean  "daily_emails",  default: true
+    t.boolean  "weekly_emails", default: false
   end
 
 end
