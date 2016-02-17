@@ -30,6 +30,11 @@ gem 'font-awesome-sass', '~> 4.2.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+group :test do
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
+end
+
 group :development, :test do
   gem 'byebug'
 end
