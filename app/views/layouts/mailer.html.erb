@@ -1,0 +1,410 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Atad Notifications</title>
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500,700" rel="stylesheet" type="text/css">
+
+    <style type="text/css">
+      /*////// RESET STYLES //////*/
+      body, #bodyTable, #bodyCell{height:100% !important; margin:0; padding:0; width:100% !important;}
+      body { -webkit-font-smoothing: antialiased; text-size-adjust: none !important; -ms-text-size-adjust: none !important; -webkit-text-size-adjust: none !important; }
+      table{border-collapse:collapse; table-layout: fixed;}
+      img, a img{border:0; outline:none; text-decoration:none;}
+      h1, h2, h3, h4, h5, h6{margin:0; padding:0;}
+      p{margin: 1em 0;}
+
+      /*////// CLIENT-SPECIFIC STYLES //////*/
+      .ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Hotmail/Outlook.com to display emails at full width. */
+      .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div{line-height:100%;} /* Force Hotmail/Outlook.com to display line heights normally. */
+      table, td{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove spacing between tables in Outlook 2007 and up. */
+      #outlook a{padding:0;} /* Force Outlook 2007 and up to provide a "view in browser" message. */
+      img{-ms-interpolation-mode: bicubic;} /* Force IE to smoothly render resized images. */
+      body, table, td, p, a, li, blockquote{-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%;} /* Prevent Windows- and Webkit-based mobile platforms from changing declared text sizes. */
+
+      /*////// FRAMEWORK STYLES //////*/
+      .flexibleContainerCell{padding-top:20px; padding-Right:20px; padding-Left:20px;}
+      .flexibleImage{height:auto;}
+      .bottomShim{padding-bottom:20px;}
+      .imageContent, .imageContentLast{padding-bottom:20px;}
+      .nestedContainerCell{padding-top:20px; padding-Right:20px; padding-Left:20px;}
+
+      /*////// GENERAL STYLES //////*/
+      body, #bodyTable{background-color:#FFFFFF;}
+      #bodyCell {
+        padding-top:40px;
+        padding-bottom:40px;
+      }
+      #emailBody {
+        background-color:#FFFFFF;
+        border:1px solid #DDDDDD;
+        border-collapse:separate;
+        border-radius:4px;
+      }
+      h1, h2, h3, h4, h5, h6{ word-break: normal;color:#008ED6; font-family:'Roboto', Helvetica, sans-serif; line-height:125%; text-align:Left;}
+      h1 {font-size: 40px;}
+      h2 {font-size: 36px;}
+      h3 {font-size: 32px;}
+      h4 {font-size: 28px;}
+      h5 {font-size: 24px;}
+      h6 {font-size: 16px;}
+      .textContent, .textContentLast{
+        color: #313131;
+        font-size: 16px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        mso-line-height-rule: exactly;
+        line-height: 24px;
+        text-align: left;
+      }
+      .textContent a, .textContentLast a{color:#008ED6; text-decoration:underline;}
+      .nestedContainer{background-color:#E5E5E5; border:1px solid #CCCCCC;}
+      .emailButton{background-color:#008ED6; border-collapse:separate; border-radius:4px;}
+      .buttonContent{color:#FFFFFF; font-family:'Roboto', Helvetica, sans-serif; font-size:18px; font-weight:bold; line-height:100%; padding:15px; text-align:center;}
+      .buttonContent a{color:#FFFFFF; display:block; text-decoration:none;}
+      .emailCalendar{background-color:#FFFFFF; border:1px solid #CCCCCC;}
+      .emailCalendarMonth{background-color:#008ED6; color:#FFFFFF; font-family:'Roboto', Helvetica, sans-serif, Arial, sans-serif; font-size:16px; font-weight:bold; padding-top:10px; padding-bottom:10px; text-align:center;}
+      .emailCalendarDay{color:#008ED6; font-family:'Roboto', Helvetica, sans-serif, Arial, sans-serif; font-size:60px; font-weight:bold; line-height:100%; padding-top:20px; padding-bottom:20px; text-align:center;}
+
+      #emailFooter .textContent {
+        text-align: center;
+        border:none;
+        margin:0px;
+        padding:0px;
+        font-family:Circular,'Helvetica Neue',Helvetica,Arial,sans-serif;
+        font-weight:200;
+        text-decoration:none;
+        font-size:11px;
+        line-height:1.65em;
+        color: #88898c;
+      }
+
+      .newsletterTitle {
+        padding-bottom: 10px;
+      }
+
+      .subNewsletterTitle {
+        font-size: 20px;
+        text-align: center;
+      }
+
+      .dottedBorder {
+        border-top:1px dotted #cccccc;
+        border-bottom:1px dotted #cccccc;
+        padding-top:10px;
+        padding-bottom:10px;
+      }
+      .noBorderBottom {
+        border-bottom: 0;
+      }
+      .noBorderTop {
+        border-top: 0;
+      }
+
+      .socialMedia {
+        text-align: center;
+        padding: 15px;
+      }
+
+      .socialMedia a {
+        margin: 5px;
+      }
+
+      .showForMobile li,
+      .hideForDesktop li {
+        display: inline;
+        mso-hide:all;
+      }
+
+      .showForMobile img,
+      .hideForDesktop img {
+        max-height: 0;
+        width: 0;
+      }
+
+      .showForMobile *,
+      .hideForDesktop * {
+        mso-hide:all;
+      }
+
+      .showForMobile,
+      .hideForDesktop {
+        width:0;
+        overflow:hidden;
+        float:left;
+        display:none;
+        height: 0;
+      }
+
+      .newsletter-title {
+        color: #313131;
+        font-size: 25px;
+        font-weight: bold;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      .sub-newsletter-title {
+        color: #313131;
+        font-size: 16px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+      }
+      .sub-newsletter-title td {
+        padding: 10px;
+      }
+      .facebook.emailButton {
+        background-color: #48649F;
+      }
+      .twitter.emailButton {
+        background-color: #55ACEE;
+      }
+      .email.emailButton {
+        background-color: #75C12B;
+      }
+      .share {
+        font-size: 12px;
+      }
+      .share a img {
+        width: 15px;
+      }
+      .facebook.share a img {
+        width: 6px;
+        float: left;
+      }
+      .facebook.share a span {
+        margin-left: 5px;
+      }
+    </style>
+    <style data-roadie-ignore>
+      .showForMobile,
+      .hideForDesktop {
+        display: none;
+        font-size: 0;
+        max-height: 0;
+        line-height: 0;
+        padding: 0;
+      }
+    </style>
+    <style type="text/css" data-roadie-ignore>
+      /*////// MOBILE STYLES //////*/
+      @media only screen and (max-width: 480px) {
+        /*////// CLIENT-SPECIFIC STYLES //////*/
+        body {width:100% !important; min-width:100% !important;} /* Force iOS Mail to render the email at full width. */
+        table { table-layout: auto; }
+        *[class*="hideForMobile"],
+        *[class*="showForDesktop"] {
+          display: none !important;
+        }
+
+        *[class*="showForMobile"] img,
+        *[class*="hideForDesktop"] img {
+          display: inline !important;
+        }
+
+        *[class*="showForMobile"],
+        *[class*="hideForDesktop"] {
+          display: block !important;
+        }
+
+        *[class*="showForMobile"] img,
+        *[class*="hideForDesktop"] img,
+        *[class*="showForMobile"],
+        *[class*="hideForDesktop"] {
+          float: none !important;
+          overflow: visible !important;
+          width: initial !important;
+          font-size: 100% !important;
+          max-height: none !important;
+          line-height: 1.5 !important;
+          height: initial !important;
+        }
+
+        *[class*="showForMobile"] li,
+        *[class*="hideForDesktop"] li {
+          display: list-item !important;
+        }
+
+        *[class*="showForMobile"] td,
+        *[class*="hideForDesktop"] td {
+          box-sizing: border-box;
+        }
+
+        /*////// FRAMEWORK STYLES //////*/
+        /*
+        CSS selectors are written in attribute
+        selector format to prevent Yahoo Mail
+        from rendering media query styles on
+        desktop.
+        */
+        table[id="emailBody"], table[id="emailFooter"], table[class="flexibleContainer"]{
+          width:100% !important;
+        }
+
+        /*
+        The following style rule makes any
+        image classed with 'flexibleImage'
+        fluid when the query activates.
+        Make sure you add an inline max-width
+        to those images to prevent them
+        from blowing out.
+        */
+        img[class="flexibleImage"]{height:auto !important; width:100% !important;}
+
+        /*
+        Make buttons in the email span the
+        full width of their container, allowing
+        for left- or right-handed ease of use.
+        */
+        table[class="emailButton"]{width:100% !important;}
+        td[class="buttonContent"]{padding:0 !important;}
+        td[class="buttonContent"] a{padding:15px !important;}
+
+        td[class="textContentLast"], td[class="imageContentLast"]{padding-top:20px !important;}
+
+        /*////// GENERAL STYLES //////*/
+        td[id="bodyCell"]{padding-top:10px !important; padding-Right:10px !important; padding-Left:10px !important;}
+        body[yahoo] .main-table { width: 320px !important; padding: 0 10px; }
+        body[yahoo]  img { width: auto !important; max-width: 100% !important; }
+
+        *[class*="share"] {
+          display: inline-block !important;
+          font-size: 18px;
+          padding: 15px 0 !important;
+        }
+
+        *[class*="share"] .emailButton {
+          width: 100%;
+        }
+        *[class*="share"] a img {
+          width: 15px !important;
+        }
+        *[class*="facebook share"] a img {
+          width: 8px !important;
+          float: left;
+        }
+      }
+      @media screen and (max-width: 599px) {
+        *[class*="gmail-hack"] {
+          display: none !important;
+        }
+      }
+    </style>
+    <!--
+    Outlook Conditional CSS
+
+    These two style blocks target Outlook 2007 & 2010 specifically, forcing
+    columns into a single vertical stack as on mobile clients. This is
+    primarily done to avoid the 'page break bug' and is optional.
+
+    More information here:
+    http://templates.mailchimp.com/development/css/outlook-conditional-css
+    -->
+    <!--[if mso 12]>
+    <style type="text/css">
+      .flexibleContainer{display:block !important; width:100% !important;}
+    </style>
+    <![endif]-->
+    <!--[if mso 14]>
+    <style type="text/css">
+      .flexibleContainer{display:block !important; width:100% !important;}
+    </style>
+    <![endif]-->
+  </head>
+  <body yahoo="fix">
+    <!-- Gmail hack -->
+    <div class="gmail-hack" style="display:none; white-space:nowrap; font:15px courier; color:#ffffff; line-height:0; width:800px !important; min-width:800px !important; max-width:800px !important;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
+    <!-- /Gmail hack -->
+    <center>
+      <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
+        <tr>
+          <td align="center" valign="top" id="bodyCell">
+            <!-- EMAIL CONTAINER // -->
+            <!--
+            The table "emailBody" is the email's container.
+            Its width can be set to 100% for a color band
+            that spans the width of the page.
+            -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" id="emailBody">
+              <% if content_for(:newsletter_title) %>
+                <tr class="newsletter-title">
+                  <td align="center" valign="top">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td align="center" valign="top">
+                          <table border="0" cellpadding="0" cellspacing="0" width="600" class="flexibleContainer">
+                            <tr>
+                              <td align="center" valign="top" width="100%" class="flexibleContainerCell">
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                  <tr>
+                                    <td valign="top" class="newsletterTitle">
+                                      <%= yield :newsletter_title %>
+                                    </td>
+                                  </tr>
+                                  <% if content_for(:sub_newsletter_title) %>
+                                  <tr>
+                                    <td class="subNewsletterTitle dottedBorder">
+                                      <%= yield :sub_newsletter_title %>
+                                    </td>
+                                  </tr>
+                                  <% end %>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              <% end %>
+              <%= yield %>
+            </table>
+            <!-- // Footer -->
+            <table id="emailFooter" border="0" cellpadding="0" cellspacing="0" width="600">
+              <tr>
+                <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                      <td align="center" valign="top">
+                        <table border="0" cellpadding="0" cellspacing="0" width="600" class="flexibleContainer">
+                          <tr>
+                            <td align="center" valign="top" width="100%" class="flexibleContainerCell">
+                              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <% if(content_for :unsubscribe) %>
+                                <tr>
+                                  <td align="center" style="padding-bottom: 15px; padding-top: 15px">
+                                    <table border="0" width="160" align="center" cellpadding="0" cellspacing="0" bgcolor="008ed6">
+                                      <tbody><tr><td height="1" style="font-size: 1px; line-height: 1px;">&nbsp;</td></tr>
+                                    </tbody></table>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="100%" valign="top" class="textContent">
+                                    <%= yield :unsubscribe %>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center" style="padding-top: 15px">
+                                    <table border="0" width="160" align="center" cellpadding="0" cellspacing="0" bgcolor="008ed6">
+                                      <tbody><tr><td height="1" style="font-size: 1px; line-height: 1px;">&nbsp;</td></tr>
+                                    </tbody></table>
+                                  </td>
+                                </tr>
+                                <% end %>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </center>
+  </body>
+</html>

@@ -20,15 +20,7 @@ gem 'devise'
 gem "aws-ses", "~> 0.6.0", :require => 'aws/ses'
 gem 'bower-rails'
 gem 'font-awesome-sass', '~> 4.2.0'
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'roadie-rails', '1.0.6'
 
 group :test do
   gem 'cucumber-rails', :require => false
