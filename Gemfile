@@ -19,6 +19,7 @@ gem 'activeadmin-wysihtml5', github: 'stefanoverna/activeadmin-wysihtml5'
 gem 'devise'
 gem "aws-ses", "~> 0.6.0", :require => 'aws/ses'
 gem 'bower-rails'
+gem 'font-awesome-sass', '~> 4.2.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
