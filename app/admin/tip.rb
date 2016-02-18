@@ -1,5 +1,13 @@
 ActiveAdmin.register Tip do
 
+  index do
+    id_column
+    column :subject
+    column :created_at
+    column :updated_at
+    actions
+  end
+
   form do |f|
     inputs do
       input :subject
