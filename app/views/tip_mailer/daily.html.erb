@@ -4,6 +4,9 @@
     -webkit-border-radius: 50%;
     border-radius: 50%;
   }
+  .footer {
+    padding-bottom: 15px;
+  }
 </style>
 <style type="text/css" data-roadie-ignore>
   @media only screen and (max-width: 480px) {
@@ -144,9 +147,34 @@
                   <tr>
                     <td valign="top" class="textContent" colspan="1">
                       <b>Your invite link</b><br />
-                      There is no way for your friends to subscribe without your invite link.<br /><br />
+                      There is no way for your friends or colleagues to subscribe without your invite link.<br /><br />
                       AgileTipADay.com is an invite-only service for a community of agilists. One short curated agile tip a day delivered to your email.<br /><br />
                       Here is the invite link for my friends: <a href="http://www.agiletipaday.com?ref=<%= @user.ref_code %>">http://www.agiletipaday.com?ref=<%= @user.ref_code %></a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+<!-- Unsubscribe -->
+<tr>
+  <td align="center" valign="top">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td align="center" valign="top">
+          <table border="0" cellpadding="0" cellspacing="0" width="600" class="flexibleContainer">
+            <tr>
+              <td align="center" valign="top" width="100%" class="flexibleContainerCell">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td valign="top" class="textContent footer" colspan="1">
+                      Is this too much email? You can <%= link_to "unsubscribe", unsubscribe_url(token: @user.email_token, email: 'daily') %> at anytime.
                     </td>
                   </tr>
                 </table>

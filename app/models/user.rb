@@ -8,6 +8,11 @@ class User < ActiveRecord::Base
     self.ref_code = SecureRandom.hex
   end
 
+  def unsubscribe_from_daily_emails
+    self.daily_emails = false
+    self.save!
+  end
+
   # Access token for a user
   def email_token
     self.class.create_email_token(self.id)
@@ -15,7 +20,7 @@ class User < ActiveRecord::Base
 
   # Verifier based on our application secret
   def self.verifier
-    ActiveSupport::MessageVerifier.new(Rails.application.secrets.secret_key)
+    ActiveSupport::MessageVerifier.new(Rails.application.secrets.secret_key_base)
   end
 
   # Class method for token generation

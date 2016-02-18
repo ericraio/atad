@@ -38,4 +38,7 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  port = Object.const_defined?('Rails::Server') ? Rails::Server.new.options[:Port] : 3000
+  Rails.application.routes.default_url_options[:host] = "localhost:#{port}"
 end

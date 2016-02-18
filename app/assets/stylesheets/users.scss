@@ -1,0 +1,22 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.users {
+  .unsubscribe-container {
+    display: table;
+    width: 100%;
+    height: auto;
+    padding: 100px 0;
+    text-align: center;
+    .unsubscribe-body {
+      display: table-cell;
+      vertical-align: middle;
+      height: auto;
+      width: 645px;
+      margin: 0px auto;
+      position: relative;
+      text-align: center;
+    }
+  }
+}
