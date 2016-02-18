@@ -5,6 +5,13 @@
     border-radius: 50%;
   }
 </style>
+<style type="text/css" data-roadie-ignore>
+  @media only screen and (max-width: 480px) {
+    .createdBy {
+      padding-left: 15px;
+    }
+  }
+</style>
 
 <% content_for :newsletter_title do %>
   <%= @tip.subject %>
@@ -24,7 +31,7 @@
                     <td valign="top" class="textContent" colspan="1">
                       <%= image_tag(@tip.creator.gravatar_url, class: 'avatarImage') %>
                     </td>
-                    <td valign="top" class="textContent" colspan="8">
+                    <td valign="top" class="textContent createdBy" colspan="8">
                       created by <%= "#{@tip.creator.first_name} #{@tip.creator.last_name}" %>
                     </td>
                   </tr>
