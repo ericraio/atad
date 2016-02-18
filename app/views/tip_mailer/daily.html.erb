@@ -82,24 +82,24 @@
               <td align="center" valign="top" width="100%" class="flexibleContainerCell">
                 <table border="0" cellpadding="0" cellspacing="0" width="100%">
                   <tr>
-                    <td class="share buttonContent" width="100%">
-                      <table class="facebook emailButton" align="center">
-                        <tr>
-                          <td class="facebook share buttonContent">
-                            <a href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank">
-                              <img src="https://s3-us-west-1.amazonaws.com/carsocial-web/newsletters/images/facebook-icon.png" />
-                              <span>Share This Tip</span>
-                            </a>
-                          </td>
-                        </tr>
-                      </table>
-                    </td>
+                    <%#<td class="share buttonContent" width="100%">%>
+                      <%#<table class="facebook emailButton" align="center">%>
+                        <%#<tr>%>
+                          <%#<td class="facebook share buttonContent">%>
+                            <%#<a href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank">%>
+                              <%#<img src="https://s3-us-west-1.amazonaws.com/carsocial-web/newsletters/images/facebook-icon.png" />%>
+                              <%#<span>Share This Tip</span>%>
+                            <%#</a>%>
+                          <%#</td>%>
+                        <%#</tr>%>
+                      <%#</table>%>
+                    <%#</td>%>
 
                     <td class="share buttonContent" width="100%">
                       <table class="email emailButton" align="center">
                         <tr>
                           <td class="email share buttonContent">
-                            <a href="mailto:?subject=" target="_blank">
+                            <a href="mailto:?subject=Invite-only%20curated%20agile%20ideas&body=Hi%20there.%20Take%20a%20look%2C%20what%20I%27ve%20hunted.%20An%20invite-only%20service%20for%20a%20community%20of%20agilists.%20One%20short%20curated%20agile%20tip%20a%20day%20delivered%20to%20your%20email.%0A%0AHere%20is%20the%20invite%20link%20for%20you%3A%20http%3A%2F%2Fwww.agiletipaday.com%2F%3Fref%3D<%= @user.ref_code %>" target="_blank">
                               <img src="https://s3-us-west-1.amazonaws.com/carsocial-web/newsletters/images/email-icon.png" />
                               Invite a Friend
                             </a>
@@ -108,17 +108,45 @@
                       </table>
                     </td>
 
-                    <td class="share buttonContent" width="100%">
-                      <table class="twitter emailButton" align="center">
-                        <tr>
-                          <td class="twitter share buttonContent">
-                            <a href="https://twitter.com/intent/tweet?text=&source=webclient" target="_blank">
-                              <img src="https://s3-us-west-1.amazonaws.com/carsocial-web/newsletters/images/twitter-icon.png" />
-                              Tweet this Tip
-                            </a>
-                          </td>
-                        </tr>
-                      </table>
+                    <%#<td class="share buttonContent" width="100%">%>
+                      <%#<table class="twitter emailButton" align="center">%>
+                        <%#<tr>%>
+                          <%#<td class="twitter share buttonContent">%>
+                            <%#<a href="https://twitter.com/intent/tweet?text=&source=webclient" target="_blank">%>
+                              <%#<img src="https://s3-us-west-1.amazonaws.com/carsocial-web/newsletters/images/twitter-icon.png" />%>
+                              <%#Tweet this Tip%>
+                            <%#</a>%>
+                          <%#</td>%>
+                        <%#</tr>%>
+                      <%#</table>%>
+                    <%#</td>%>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+<!-- Invite link -->
+<tr>
+  <td align="center" valign="top">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td align="center" valign="top">
+          <table border="0" cellpadding="0" cellspacing="0" width="600" class="flexibleContainer">
+            <tr>
+              <td align="center" valign="top" width="100%" class="dottedBorder flexibleContainerCell">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td valign="top" class="textContent" colspan="1">
+                      <b>Share your ideas:</b><br />
+                      Discuss with your friends and colleagues about the new ideas you have learned. Try to share something similar to this text, as it converts best: <br /><br />
+                      An invite-only service for a community of agilists. One short curated agile tip a day delivered to your email. <br /><br />
+                      Here is the invite link for my friends: <a href="http://www.agiletipaday.com?ref=<%= @user.ref_code %>">http://www.agiletipaday.com?ref=<%= @user.ref_code %></a>
                     </td>
                   </tr>
                 </table>
