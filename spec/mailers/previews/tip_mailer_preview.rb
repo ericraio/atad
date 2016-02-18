@@ -5,13 +5,13 @@ class TipMailerPreview < ActionMailer::Preview
   def daily
     user = User.first
     tip = Tip.first
-    TipMailer.daily(user.id, tip.id)
+    TipMailer.daily(user, tip)
   end
 
   # Preview this email at http://localhost:3000/rails/mailers/tip_mailer/weekly
   def weekly
     user = User.first
-    TipMailer.weekly(user.id)
+    TipMailer.weekly(user)
   end
 
 end
