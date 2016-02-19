@@ -22,6 +22,10 @@ gem 'bower-rails'
 gem 'font-awesome-sass', '~> 4.2.0'
 gem 'roadie-rails', '1.0.6'
 gem 'paper_trail'
+gem 'ahoy_email'
+gem 'chartkick'
+gem 'groupdate'
+gem 'ahoy_matey'
 
 group :test do
   gem 'cucumber-rails', :require => false

@@ -40,5 +40,9 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   port = Object.const_defined?('Rails::Server') ? Rails::Server.new.options[:Port] : 3000
-  Rails.application.routes.default_url_options[:host] = "localhost:#{port}"
+  host = "localhost:#{port}"
+  Rails.application.routes.default_url_options[:host] = host
+  config.action_mailer.default_url_options = {
+    host: host
+  }
 end
