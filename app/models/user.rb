@@ -1,11 +1,13 @@
 class User < ActiveRecord::Base
   before_validation :generate_ref_code, on: :create
-
-  has_many :invitees, class_name: 'User', foreign_key: :inviter_id
-  belongs_to :inviter, class_name: 'User', foreign_key: :inviter_id
+  before_save { |user| user.email = user.email.downcase }
 
   validates_presence_of :ref_code
   validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+
+  has_many :messages, class_name: "Ahoy::Message"
+  has_many :invitees, class_name: 'User', foreign_key: :inviter_id
+  belongs_to :inviter, class_name: 'User', foreign_key: :inviter_id
 
   def self.subscribe(user_params)
     user = self.find_or_initialize_by(email: user_params[:email])
