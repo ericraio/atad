@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root 'home#index'
   get '/unsubscribe', to: 'users#unsubscribe', as: 'unsubscribe'
+  resources :users, only: :create
 end

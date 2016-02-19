@@ -1,4 +1,18 @@
-<div class="col-md-8 col-md-offset-2">
-  <h2><span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span>&nbsp;  Sorry, you are not invited.</h2>
-  <p>This is an invite-only service for a community of agilists.</p>
+<div class="col-md-8 col-md-offset-2 signup-container">
+  <%= form_for @user, html: { class: 'form-horizontal form-large', role: 'form' } do |f| %>
+    <div class="form-group">
+      <div class="col-lg-8">
+        <%= f.hidden_field :inviter_id, value: @inviter.id %>
+        <%= f.text_field :email, class: 'form-control', placeholder: 'Your Email', autofocus: true, type: 'email' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="email-button">
+        <%= f.submit "Subscribe (for you it's free) »" , class: "btn btn-success" %>
+      </div>
+    </div>
+  <% end %>
+
+  <h2 class="acceptance"><span class="glyphicon glyphicon-ok" aria-hidden="true" style="color: #4CAE4C;"></span>&nbsp; Your invitation has been accepted! Now you can subscribe.</h2>
 </div>

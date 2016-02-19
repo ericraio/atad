@@ -2,47 +2,60 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@media (min-width: 1200px)  {
+  .home {
+    .form-large input, .form-large  button{
+      width: 750px;
+    }
+  }
+}
+
+@media (max-width: 768px)  {
+  .home-container {
+    .container {
+      transform: translateY(10%) !Important;
+    }
+
+    .form-large input, .form-large button {
+      font-size: 20px;
+    }
+  }
+}
+
 .home {
   color: #fff;
   background-color: #282828;
+
+  .email-button {
+    padding: 0 15px;
+    input {
+      width: 100%;
+    }
+  }
+
+  .signup-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 25px 15px;
+  }
+
   h2 {
     color: #A94442;
   }
+
+  h2.acceptance {
+    color: #5CB85C;
+  }
   .home-container {
-    display: table;
     width: 100%;
-    height: auto;
-    padding: 100px 0;
+    .container {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
     text-align: center;
     color: #fff;
     background: image-url('bg.jpg') no-repeat bottom center scroll;
     background-color: #282828;
-  }
-
-  .home-row {
-    margin-top: -180px;
-  }
-
-  .home-container .home-body {
-    display: table-cell;
-    vertical-align: middle;
-    height: auto;
-    width: 645px;
-    margin: 0px auto;
-    position: relative;
-    text-align: center;
-  }
-
-  .home-container .home-body .brand-heading {
-    font-family: Oxygen,"helvetica neue",helvetica,arial,sans-serif;
-    margin-bottom: 4rem;
-    text-align: center;
-    font-weight: 700;
-    color: #fff;
-  }
-
-  .home-container .home-body .home-container-text {
-    font-size: 18px;
   }
 
   @media(min-width:768px) {

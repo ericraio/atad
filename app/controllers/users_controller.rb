@@ -1,15 +1,18 @@
 class UsersController < ApplicationController
+
+  def create
+    User.subscribe(user_params)
+    redirect_to root_url
+  end
+
   def unsubscribe
-    if !params[:token] || !params[:email]
-      redirect_to root_url
-    end
-
+    redirect_to root_url if !params[:token] || !params[:email]
     @user = User.read_email_token(params[:token])
-
-    if !@user
-      redirect_to root_url
-    end
-
+    redirect_to root_url if !@user
     @user.unsubscribe_from_daily_emails
+  end
+
+  def user_params
+    params.require(:user).permit(:inviter_id, :email)
   end
 end
