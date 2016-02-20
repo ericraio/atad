@@ -11,6 +11,11 @@ class User < ActiveRecord::Base
 
   def self.subscribe(user_params)
     user = self.find_or_initialize_by(email: user_params[:email])
+    if user_params[:inviter_id].to_i == user.id
+      user_params.delete(:inviter_id)
+    else
+      User.increment_counter(:invite_count, user_params[:inviter_id])
+    end
     user.assign_attributes(user_params.merge(daily_emails: true))
     user.save!
   end

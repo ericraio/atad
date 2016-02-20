@@ -18,6 +18,16 @@ GIT
       sprockets (< 4)
 
 GIT
+  remote: git://github.com/ankane/ahoy_email.git
+  revision: 9416ab989b942cd556d09380f9072c260c2d6551
+  specs:
+    ahoy_email (0.3.0)
+      addressable
+      nokogiri
+      rails
+      safely_block
+
+GIT
   remote: git://github.com/stefanoverna/activeadmin-dragonfly.git
   revision: 611164ff0255c66a3e555b5d46dd99f0eff1f115
   specs:
@@ -73,11 +83,6 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.4.0)
-    ahoy_email (0.3.0)
-      addressable
-      nokogiri
-      rails
-      safely_block
     ahoy_matey (1.2.1)
       addressable
       browser (>= 0.4.0)
@@ -336,7 +341,7 @@ DEPENDENCIES
   activeadmin!
   activeadmin-dragonfly!
   activeadmin-wysihtml5!
-  ahoy_email
+  ahoy_email!
   ahoy_matey
   aws-ses (~> 0.6.0)
   bower-rails
