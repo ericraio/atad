@@ -1,15 +1,13 @@
 <div class="col-md-8 col-md-offset-2 signup-container">
   <%= form_for @user, html: { class: 'form-horizontal form-large', role: 'form' } do |f| %>
     <div class="form-group">
-      <div class="col-lg-8">
-        <%= f.hidden_field :inviter_id, value: @inviter.id %>
-        <%= f.text_field :email, class: 'form-control', placeholder: 'Your Email', autofocus: true, type: 'email' %>
-      </div>
+      <%= f.hidden_field :inviter_id, value: @inviter.id %>
+      <%= f.text_field :email, class: 'form-control', placeholder: 'Your Email', autofocus: true, type: 'email' %>
     </div>
 
     <div class="form-group">
       <div class="email-button">
-        <%= f.submit "Subscribe (for you it's free) »" , class: "btn btn-success" %>
+        <%= f.submit "Subscribe (for you it's free) »" , class: "btn btn-success form-control" %>
       </div>
     </div>
   <% end %>
