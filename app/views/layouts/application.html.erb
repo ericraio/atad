@@ -1,15 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Agile Tip A Day</title>
+  <%=
+      title = 'One Short Agile Tip a Day to Your Email'
+      description = 'An invite-only community of agilists. New curated agile tip delivered to your email every weekday.'
+      keywords = %w[agile tip daily email]
+      display_meta_tags({
+        :title => title,
+        :description => description,
+        :keywords => keywords,
+        :author => "https://plus.google.com/105738964714108363260",
+        :publisher => "https://plus.google.com/105738964714108363260", # later change this to empirical google+
+        :open_graph => {
+          :title => title,
+          :description => description,
+          :type  => "website",
+          :url   => "http://www.agiletipaday.com",
+          :image => "https://s3-us-west-1.amazonaws.com/atad/social/share_image_email_bigfont_short.png",
+        },
+        :fb => { :app_id => "972822179466524" },
+        :twitter => { card: "summary_large_image", site: "@AgileTipaDay", title: title }
+      })
+  %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <%= csrf_meta_tags %>
 </head>
-<body class="<%= controller.controller_name %>">
 
-<%= yield %>
+<body class="<%= controller.controller_name %> <%= controller.action_name %>">
+
+  <%= yield %>
 
 </body>
 </html>

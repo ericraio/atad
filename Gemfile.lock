@@ -142,14 +142,8 @@ GEM
       nokogiri (~> 1.5)
       railties (>= 3, < 5)
     cucumber-wire (0.0.1)
-    daemons (1.2.3)
     database_cleaner (1.5.1)
     debug_inspector (0.0.2)
-    delayed_job (4.1.1)
-      activesupport (>= 3.0, < 5.0)
-    delayed_job_active_record (4.1.0)
-      activerecord (>= 3.0, < 5)
-      delayed_job (>= 3.0, < 5)
     devise (3.5.6)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -203,6 +197,8 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    meta-tags (2.1.0)
+      actionpack (>= 3.0.0)
     mime-types (2.99)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
@@ -349,15 +345,13 @@ DEPENDENCIES
   byebug
   chartkick
   cucumber-rails
-  daemons
   database_cleaner
-  delayed_job
-  delayed_job_active_record
   devise
   dotenv-rails
   font-awesome-sass (~> 4.2.0)
   groupdate
   jquery-rails
+  meta-tags
   paper_trail
   pg (~> 0.15)
   rails (= 4.2.5)

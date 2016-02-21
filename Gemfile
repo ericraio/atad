@@ -26,6 +26,7 @@ gem 'ahoy_email'
 gem 'chartkick'
 gem 'groupdate'
 gem 'ahoy_matey'
+gem 'meta-tags'
 
 group :test do
   gem 'cucumber-rails', :require => false
