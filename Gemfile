@@ -26,9 +26,6 @@ gem 'ahoy_email'
 gem 'chartkick'
 gem 'groupdate'
 gem 'ahoy_matey'
-gem 'daemons'
-gem 'delayed_job'
-gem 'delayed_job_active_record'
 
 group :test do
   gem 'cucumber-rails', :require => false
