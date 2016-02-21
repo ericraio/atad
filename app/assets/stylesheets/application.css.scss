@@ -20,13 +20,6 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-@media (min-width: 768px){
-  .zero-clipboard .btn-clipboard {
-    top: -16px;
-    border-top-right-radius: 0;
-  }
-}
-
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: asset-url('glyphicons-halflings-regular.eot');
@@ -107,7 +100,7 @@ p {
 }
 
 a {
-  color: #42dca3;
+  color: #008EDC;
   -webkit-transition: all .2s ease-in-out;
   -moz-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
@@ -116,7 +109,7 @@ a {
 a:hover,
 a:focus {
   text-decoration: none;
-  color: #1d9b6c;
+  color: #007CDC;
 }
 
 .light {
@@ -323,30 +316,11 @@ ul.banner-social-buttons {
   margin-top: 0;
 }
 
-@media(max-width:1199px) {
-  ul.banner-social-buttons {
-    margin-top: 15px;
-  }
-}
-
-@media(max-width:767px) {
-  ul.banner-social-buttons li {
-    display: block;
-    margin-bottom: 20px;
-    padding: 0;
-  }
-
-  ul.banner-social-buttons li:last-child {
-    margin-bottom: 0;
-  }
-}
-
 footer {
-  padding: 50px 0;
-}
-
-footer p {
-  margin: 0;
+  margin-top: -32px;
+  p.text-muted {
+    font-size: 12px;
+  }
 }
 
 ::-moz-selection {
@@ -371,4 +345,36 @@ img::-moz-selection {
 
 body {
   webkit-tap-highlight-color: #008EDC;
+}
+
+@media (min-width: 768px){
+  .zero-clipboard .btn-clipboard {
+    top: -16px;
+    border-top-right-radius: 0;
+  }
+}
+
+@media(max-width:1199px) {
+  ul.banner-social-buttons {
+    margin-top: 15px;
+  }
+}
+
+@media(max-width:767px) {
+  ul.banner-social-buttons li {
+    display: block;
+    margin-bottom: 20px;
+    padding: 0;
+  }
+
+  ul.banner-social-buttons li:last-child {
+    margin-bottom: 0;
+  }
+
+  footer {
+    margin-top: 25px;
+    p.text-muted {
+      font-size: 11px;
+    }
+  }
 }

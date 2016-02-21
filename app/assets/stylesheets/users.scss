@@ -21,14 +21,6 @@
   }
 }
 
-@media (max-width: 768px)  {
-  .users.welcome, .users.welcome_back {
-    .container {
-      transform: translateY(0%) !Important;
-    }
-  }
-}
-
 .users.welcome_back {
   li {
     list-style: none;
@@ -39,7 +31,7 @@
   background-color: #E9EAED;
 
   .container {
-    transform: translateY(30%);
+    margin-top: 150px;
     .col-lg-10 {
       min-height: 20px;
       padding: 19px;
@@ -105,3 +97,12 @@
   }
 
 }
+
+@media (max-width: 768px)  {
+  .users.welcome, .users.welcome_back {
+    .container {
+      margin-top: 0;
+    }
+  }
+}
+
