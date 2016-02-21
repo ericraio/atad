@@ -1,5 +1,8 @@
 ActiveAdmin.register Tip do
 
+  scope :unpublished
+  scope :published
+
   index do
     id_column
     column :subject

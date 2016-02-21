@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
 
   validates_presence_of :ref_code
   validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+  validates_uniqueness_of :email
 
   has_many :messages, class_name: "Ahoy::Message"
   has_many :invitees, class_name: 'User', foreign_key: :inviter_id
@@ -24,6 +25,15 @@ class User < ActiveRecord::Base
     SlackInviteJob.perform_later(self)
   end
 
+  def self.email_new_daily_tip_to_subscribers
+    tip = Tip.where(published_at: nil).first
+    where(daily_email: true).find_in_batches do |group|
+      group.each { |user| user.email_daily_tip(tip) }
+    end
+    tip.published_at = DateTime.now
+    tip.save!
+  end
+
   def self.subscribe(user_params)
     user = self.find_or_initialize_by(email: user_params[:email])
     user.is_new_record = user.new_record?
@@ -35,6 +45,10 @@ class User < ActiveRecord::Base
     user.assign_attributes(user_params.merge(daily_emails: true))
     user.save!
     user
+  end
+
+  def email_daily_tip(tip)
+    TipMailer.daily(self, tip).deliver_later
   end
 
   def generate_ref_code

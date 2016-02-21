@@ -4,6 +4,9 @@ class Tip < ActiveRecord::Base
   slug :subject
   has_paper_trail
 
+  scope :unpublished, -> { where(published_at: nil) }
+  scope :published, -> { where.not(published_at: nil) }
+
   validates_presence_of :subject
   validates_presence_of :body
 
