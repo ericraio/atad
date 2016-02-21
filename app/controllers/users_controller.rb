@@ -1,14 +1,21 @@
 class UsersController < ApplicationController
 
-  before_action :load_user_if_set, only: :welcome
+  before_action :load_user_if_set, only: [:welcome, :welcome_back]
 
   def create
     @user = User.subscribe(user_params)
     session[:user] = @user
-    redirect_to welcome_url
+    if @user.new_record?
+      redirect_to welcome_url
+    else
+      redirect_to welcome_back_url
+    end
   end
 
   def welcome
+  end
+
+  def welcome_back
   end
 
   def unsubscribe

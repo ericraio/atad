@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   root 'home#index'
   get '/unsubscribe', to: 'users#unsubscribe', as: 'unsubscribe'
   get '/welcome', to: 'users#welcome', as: 'welcome'
+  get '/welcome_back', to: 'users#welcome_back', as: 'welcome_back'
   resources :users, only: :create
 end
