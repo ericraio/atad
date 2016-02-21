@@ -26,6 +26,7 @@ gem 'ahoy_email'
 gem 'chartkick'
 gem 'groupdate'
 gem 'ahoy_matey'
+gem "queue_classic", "~> 3.0.0"
 gem 'meta-tags'
 
 group :test do
