@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require social-share-kit/dist/js/social-share-kit
 //= require clipboard/dist/clipboard
 //= require_tree .
 

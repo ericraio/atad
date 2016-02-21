@@ -2,4 +2,5 @@ dependency_group :dependencies  do
   asset "bootstrap", "~> 3.3.1"
   asset "highcharts.com"
   asset "clipboard"
+  asset "social-share-kit"
 end
