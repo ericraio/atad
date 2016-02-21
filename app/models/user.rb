@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
 
   def self.email_new_daily_tip_to_subscribers
     tip = Tip.where(published_at: nil).first
-    where(daily_email: true).find_in_batches do |group|
+    where(daily_emails: true).find_in_batches do |group|
       group.each { |user| user.email_daily_tip(tip) }
     end
     tip.published_at = DateTime.now
