@@ -2,6 +2,7 @@ class TipMailer < ApplicationMailer
   default from: '"Agile Tips" <tips@agiletipaday.com>'
 
   def daily(user, tip)
+    return unless user.daily_emails
     @user, @tip = user, tip
     mail({
       to: @user.email,
