@@ -1,0 +1,65 @@
+<style>
+  .avatarImage {
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    float: left;
+    margin-top: 20px;
+  }
+  p {
+    float: left;
+  }
+  .introText {
+    width: 88%;
+    margin-left: 15px;
+  }
+</style>
+<style type="text/css" data-roadie-ignore>
+  @media only screen and (max-width: 480px) {
+    .introText {
+      width: 80%;
+      margin-left: 15px;
+    }
+  }
+</style>
+
+<% content_for :newsletter_title do %>
+  Welcome to Agile Tip a Day
+<% end %>
+
+<!-- Main -->
+<tr>
+  <td align="center" valign="top">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td align="center" valign="top">
+          <table border="0" cellpadding="0" cellspacing="0" width="600" class="flexibleContainer">
+            <tr>
+              <td align="center" valign="top" width="100%" class="dottedBorder flexibleContainerCell">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td valign="top" class="textContent">
+                      <%= image_tag('https://ci3.googleusercontent.com/proxy/sInJ3aO40Pc1RZuhvP8mv05vf6OjKEdG8h_wYecbdV8QIQY1cDjr1Q34GinKynQpIBjExGe55JBn77mmC6ivOZ064QnXI48rYWIWphwG1YZib9z-8hhcwMR9=s0-d-e1-ft#http://gravatar.com/avatar/69bdacd70dafc570b4d2cc1e670b1968.png?s=48', class: 'avatarImage') %>
+                      <p class="introText">
+                        <b>Hi! My name is Eric Raio.</b> I'm a co-founder of Agile Tip a Day. Happy to see you in our community! We built this to help people gain new ideas to execute within your company.
+                      </p>
+                      <p>
+                        You should receive an email to join our exclusive slack community. Please join the community and meet the others.<br /><br />
+
+                        If you wouldn't mind, I'd love it if you answered one quick question: why did you subscribe for Agile Tip a Day?
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+
+<%= render "/shared_mailer/share" %>
+<%= render "/shared_mailer/invite" %>

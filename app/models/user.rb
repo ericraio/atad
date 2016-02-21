@@ -7,9 +7,17 @@ class User < ActiveRecord::Base
 
   has_many :messages, class_name: "Ahoy::Message"
   has_many :invitees, class_name: 'User', foreign_key: :inviter_id
+
   belongs_to :inviter, class_name: 'User', foreign_key: :inviter_id
 
+  after_create :send_welcome_email
   after_create :send_slack_invite
+
+
+  def send_welcome_email
+    UserMailer.welcome(self).deliver_later
+  end
+
   def send_slack_invite
     SlackInviteJob.perform_later(self)
   end
