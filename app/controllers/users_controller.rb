@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  skip_before_action :load_user_if_set, only: :create
+  before_action :load_user_if_set, only: :welcome
 
   def create
     @user = User.subscribe(user_params)

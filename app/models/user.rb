@@ -9,6 +9,11 @@ class User < ActiveRecord::Base
   has_many :invitees, class_name: 'User', foreign_key: :inviter_id
   belongs_to :inviter, class_name: 'User', foreign_key: :inviter_id
 
+  after_create :send_slack_invite
+  def send_slack_invite
+    SlackInviteJob.perform_later(self)
+  end
+
   def self.subscribe(user_params)
     user = self.find_or_initialize_by(email: user_params[:email])
     if user_params[:inviter_id].to_i == user.id
@@ -18,6 +23,7 @@ class User < ActiveRecord::Base
     end
     user.assign_attributes(user_params.merge(daily_emails: true))
     user.save!
+    user
   end
 
   def generate_ref_code
