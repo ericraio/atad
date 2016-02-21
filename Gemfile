@@ -28,6 +28,7 @@ gem 'groupdate'
 gem 'ahoy_matey'
 gem "queue_classic", "~> 3.0.0"
 gem 'meta-tags'
+gem 'exception_notification'
 
 group :test do
   gem 'cucumber-rails', :require => false

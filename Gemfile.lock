@@ -161,6 +161,9 @@ GEM
       rack
     errbase (0.0.3)
     erubis (2.7.0)
+    exception_notification (4.1.4)
+      actionmailer (~> 4.0)
+      activesupport (~> 4.0)
     execjs (2.6.0)
     font-awesome-sass (4.2.2)
       sass (~> 3.2)
@@ -350,6 +353,7 @@ DEPENDENCIES
   database_cleaner
   devise
   dotenv-rails
+  exception_notification
   font-awesome-sass (~> 4.2.0)
   groupdate
   jquery-rails
