@@ -1,8 +1,14 @@
 class UsersController < ApplicationController
 
+  skip_before_action :load_user_if_set, only: :create
+
   def create
-    User.subscribe(user_params)
-    redirect_to root_url
+    @user = User.subscribe(user_params)
+    session[:user] = @user
+    redirect_to welcome_url
+  end
+
+  def welcome
   end
 
   def unsubscribe

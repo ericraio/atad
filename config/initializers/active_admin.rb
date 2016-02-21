@@ -6,7 +6,7 @@ class Footer < ActiveAdmin::Component
 end
 
 ActiveAdmin.setup do |config|
-  config.site_title = "Agile Tip A Day"
+  config.site_title = "Agile Tip a Day"
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.

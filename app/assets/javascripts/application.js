@@ -13,4 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require clipboard/dist/clipboard
 //= require_tree .

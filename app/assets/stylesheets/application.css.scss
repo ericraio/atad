@@ -14,10 +14,18 @@
 //= require_self
 //= require home
 //= require users
+//= require welcome
 //
 
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+@media (min-width: 768px){
+  .zero-clipboard .btn-clipboard {
+    top: -16px;
+    border-top-right-radius: 0;
+  }
+}
 
 @font-face {
   font-family: 'Glyphicons Halflings';
