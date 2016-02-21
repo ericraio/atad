@@ -18,3 +18,6 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+
+#every :weekday, at: '4am' do
+#end
