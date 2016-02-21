@@ -13,7 +13,10 @@ ActiveAdmin.register_page "Dashboard" do
       column do
         panel 'Admin Activity' do
           table_for PaperTrail::Version.order('id desc').limit(10) do # Use PaperTrail::Version if this throws an error
-            column("Item") { |v| link_to "#{v.item.class} #{v.item.id}", v.item.admin_permalink }
+            column("Item") { |v|
+              next unless v.item
+              link_to("#{v.item.class} #{v.item.id}", v.item.admin_permalink)
+            }
             column("Type") { |v| v.item_type.underscore.humanize }
             column("Modified at") { |v| v.created_at.to_s :long }
 
