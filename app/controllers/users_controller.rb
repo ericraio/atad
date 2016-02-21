@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def create
     @user = User.subscribe(user_params)
     session[:user] = @user
-    if @user.new_record?
+    if @user.is_new_record
       redirect_to welcome_url
     else
       redirect_to welcome_back_url

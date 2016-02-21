@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   after_create :send_welcome_email
   after_create :send_slack_invite
 
+  attr_accessor :is_new_record
+
 
   def send_welcome_email
     UserMailer.welcome(self).deliver_later
@@ -24,6 +26,7 @@ class User < ActiveRecord::Base
 
   def self.subscribe(user_params)
     user = self.find_or_initialize_by(email: user_params[:email])
+    user.is_new_record = user.new_record?
     if user_params[:inviter_id].to_i == user.id
       user_params.delete(:inviter_id)
     else
