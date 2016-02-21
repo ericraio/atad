@@ -31,10 +31,14 @@
     top: 4px;
   }
 
-  .email-button {
-    padding: 0 15px;
-    input {
-      width: 100%;
+  background: image-url('bg.jpg') no-repeat bottom center;
+  background-color: #282828;
+  .container {
+    margin-top: 150px;
+    .col-lg-10 {
+      min-height: 20px;
+      padding: 19px;
+      margin-bottom: 20px;
     }
   }
 
@@ -59,7 +63,6 @@
     }
     text-align: center;
     color: #fff;
-    background: image-url('bg.jpg') no-repeat bottom center scroll;
     background-color: #282828;
   }
 

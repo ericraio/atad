@@ -1,16 +1,17 @@
-<section class="home-container">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <h1 class="brand-heading">One Agile Tip A Day</h1>
-        <p class="home-text">Short, curated agile ideas delivered to your email every day. 96% retention rate.</p>
-      </div>
+<div class="container">
 
-      <% if @inviter %>
-        <%= render "sign_up" %>
-      <% else %>
-        <%= render "not_invited" %>
-      <% end %>
+  <div class="row">
+    <div class="col-lg-10 col-lg-offset-1 text-center">
+      <h1>One Agile Tip A Day</h1>
+      <p class="lead">Short, curated agile ideas delivered to your email every day. 96% retention rate.</p>
+      <p>
+        <% if @inviter %>
+          <%= render "sign_up" %>
+        <% else %>
+          <%= render "not_invited" %>
+        <% end %>
+      </p>
     </div>
   </div>
-</section>
+
+</div>
