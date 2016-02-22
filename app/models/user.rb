@@ -48,7 +48,7 @@ class User < ActiveRecord::Base
   end
 
   def email_daily_tip(tip)
-    TipMailer.daily(self, tip).deliver_later
+    TipMailer.daily(self, tip).deliver_now
   end
 
   def generate_ref_code

@@ -19,5 +19,30 @@
 
 # Learn more: http://github.com/javan/whenever
 
-#every :weekday, at: '4am' do
-#end
+env :PATH, ENV['PATH']
+
+set :output, '/var/log/cron.log'
+
+# Requires that your production server is set to UTC time
+# Subclass Time and override self.parse to adjust for timezone offset
+class TimeInZone < Time
+  def initialize
+    super
+  end
+
+  def self.parse args, utc_offset = 0
+    hours = 3600 # seconds in hour
+    super(args) - (hours * utc_offset)
+  end
+end
+
+LOCAL_TIME_ZONE_OFFSET = -7  # Set default offset
+
+# Add helper method to DRY up the cron tasks
+def local(time, utc_offset = LOCAL_TIME_ZONE_OFFSET)
+  TimeInZone.parse(time, utc_offset)
+end
+
+every :weekday, at: local('4:00 am') do
+  rake "email:daily_tip"
+end
