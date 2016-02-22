@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160221182324) do
+ActiveRecord::Schema.define(version: 20160222001129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,12 +94,12 @@ ActiveRecord::Schema.define(version: 20160221182324) do
   end
 
   create_table "queue_classic_jobs", id: :bigserial, force: :cascade do |t|
-    t.text     "q_name",                       null: false
-    t.text     "method",                       null: false
-    t.json     "args",                         null: false
+    t.text     "q_name",                                     null: false
+    t.text     "method",                                     null: false
+    t.json     "args",                                       null: false
     t.datetime "locked_at"
     t.integer  "locked_by"
-    t.datetime "created_at", default: "now()"
+    t.datetime "created_at", default: '2016-02-21 19:05:18'
   end
 
   add_index "queue_classic_jobs", ["q_name", "id"], name: "idx_qc_on_name_only_unlocked", where: "(locked_at IS NULL)", using: :btree
@@ -126,8 +126,10 @@ ActiveRecord::Schema.define(version: 20160221182324) do
     t.integer  "invite_count",  default: 0
   end
 
+  add_index "users", ["daily_emails"], name: "index_users_on_daily_emails", using: :btree
   add_index "users", ["inviter_id"], name: "index_users_on_inviter_id", using: :btree
   add_index "users", ["ref_code"], name: "index_users_on_ref_code", using: :btree
+  add_index "users", ["weekly_emails"], name: "index_users_on_weekly_emails", using: :btree
 
   create_table "versions", force: :cascade do |t|
     t.string   "item_type",  null: false
